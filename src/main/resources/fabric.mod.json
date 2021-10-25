@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "thermometer",
+  "version": "${version}",
+  "name": "Thermometer",
+  "description": "A temperature API for all your temperature needs. This API adds variable temperature across the world.",
+  "authors": [
+    "Voleil",
+    "MrSterner",
+    "AlcatrazEscapee"
+  ],
+  "contact": {
+    "website": "https://voleil.github.io",
+    "repo": "https://github.com/voleil/Thermometer"
+  },
+  "license": "MIT",
+  "icon": "assets/thermometer/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "io.github.voleil.thermometer.internal.client.ThermometerClient"
+    ],
+    "main": [
+      "io.github.voleil.thermometer.internal.Thermometer"
+    ]
+  },
+  "mixins": [
+    "thermometer.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.12.3",
+    "fabric": "*",
+    "minecraft": "1.17.1"
+  }
+}
