@@ -1,6 +1,6 @@
 package com.bloomhousemc.thermometer.internal.mixin.common;
 
-import com.bloomhousemc.thermometer.internal.util.TemperatureAccessor;
+import com.bloomhousemc.thermometer.internal.mixin.util.TemperatureAccessor;
 import com.bloomhousemc.thermometer.internal.Thermometer;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.server.world.ServerWorld;

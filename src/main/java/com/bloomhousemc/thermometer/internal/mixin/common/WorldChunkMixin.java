@@ -1,7 +1,7 @@
 package com.bloomhousemc.thermometer.internal.mixin.common;
 
 import com.bloomhousemc.thermometer.internal.Thermometer;
-import com.bloomhousemc.thermometer.internal.util.TemperatureAccessor;
+import com.bloomhousemc.thermometer.internal.mixin.util.TemperatureAccessor;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.chunk.Chunk;
@@ -36,7 +36,7 @@ public abstract class WorldChunkMixin implements Chunk, TemperatureAccessor {
 
     /**
      * Assigns a value to {@code averageTemperature}.
-     * @param serverWorld
+     * @param serverWorld retrieves temperature modifying variables from the server game rules
      * @param protoChunk unused variable
      * @param consumer unused variable
      * @param ci unused variable
