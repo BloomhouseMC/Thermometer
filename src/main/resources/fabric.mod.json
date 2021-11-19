@@ -6,11 +6,10 @@
   "description": "A temperature API for all your temperature needs. This API adds variable temperature across the world.",
   "authors": [
     "Voleil",
-    "MrSterner",
-    "AlcatrazEscapee"
+    "MrSterner"
   ],
   "contact": {
-    "website": "https://voleil.github.io",
+    "website": "https://bloomhousemc.com",
     "repo": "https://github.com/voleil/Thermometer"
   },
   "license": "MIT",
@@ -18,10 +17,10 @@
   "environment": "*",
   "entrypoints": {
     "client": [
-      "io.github.voleil.thermometer.internal.client.ThermometerClient"
+      "com.bloomhousemc.thermometer.internal.client.ThermometerClient"
     ],
     "main": [
-      "io.github.voleil.thermometer.internal.Thermometer"
+      "com.bloomhousemc.thermometer.internal.Thermometer"
     ]
   },
   "mixins": [

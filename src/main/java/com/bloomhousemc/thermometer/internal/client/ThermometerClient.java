@@ -1,4 +1,4 @@
-package io.github.voleil.thermometer.internal.client;
+package com.bloomhousemc.thermometer.internal.client;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;

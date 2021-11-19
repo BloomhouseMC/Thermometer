@@ -1,7 +1,7 @@
 plugins {
-    id("fabric-loom") version "0.10.27"
+    id("fabric-loom") version "0.10-SNAPSHOT"
     id("maven-publish")
-    id("io.github.juuxel.loom-quiltflower") version "1.3.0"
+    id("io.github.juuxel.loom-quiltflower-mini") version "1.1.0"
 }
 
 version = "${project.property("mod_version")}"
@@ -28,6 +28,10 @@ dependencies {
     // You may need to force-disable transitiveness on them.
 }
 
+quiltflower {
+    addToRuntimeClasspath.set(true)
+}
+
 val targetJavaVersion = 17
 
 tasks {
@@ -42,13 +46,13 @@ tasks {
 
     withType<JavaCompile> {
         options.encoding = "UTF-8"
-        if (targetJavaVersion >= 10 || JavaVersion.current().isJava10Compatible()) {
+        if (targetJavaVersion >= 10 || JavaVersion.current().isJava10Compatible) {
             options.release.set(targetJavaVersion)
         }
     }
 
     java {
-        val javaVersion =JavaVersion.toVersion(targetJavaVersion)
+        val javaVersion = JavaVersion.toVersion(targetJavaVersion)
         if (JavaVersion.current() < javaVersion) {
             toolchain.languageVersion.set(JavaLanguageVersion.of(targetJavaVersion))
         }
@@ -70,14 +74,8 @@ publishing {
 
     // See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
     publications {
-        register("mavenJava", MavenPublication::class) {
-            // add all the jars that should be included when publishing to maven
-//            artifact(remapJar.get()) {
-//                builtBy(remapJar)
-//            }
-//            artifact(sourcesJar.get()) {
-//                builtBy(remapSourcesJar)
-//            }
+        register<MavenPublication>("mavenJava") {
+            from(components["java"])
         }
     }
     repositories {
@@ -85,5 +83,8 @@ publishing {
         // Notice: This block does NOT have the same function as the block in the top level.
         // The repositories here will be used for publishing your artifact, not for
         // retrieving dependencies.
+        maven {
+
+        }
     }
 }

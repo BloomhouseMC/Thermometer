@@ -1,10 +1,14 @@
 {
   "required": true,
   "minVersion": "0.8.4",
-  "package": "io.github.voleil.thermometer.internal.mixin",
+  "package": "com.bloomhousemc.thermometer.internal.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "client.DebugHudMixin"
+    "client.DebugHudMixin",
+    "common.ChunkSerializerMixin",
+    "common.ProtoChunkMixin",
+    "common.ReadOnlyChunkMixin",
+    "common.WorldChunkMixin"
   ],
   "client": [
   ],
